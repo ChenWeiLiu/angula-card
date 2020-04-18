@@ -1,0 +1,17 @@
+version: "3.5"
+
+services:
+  angular-cards:
+    ports:
+      - 4300:4200
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    container_name: "angular-cards"
+    volumes:
+      - ./:/usr/src/app/
+
+networks:
+  default:
+    external:
+      name: docker_registration-django-net
